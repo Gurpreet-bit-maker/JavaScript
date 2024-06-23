@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+      }
+
+      .container {
+        width: 100%;
+        background: linear-gradient(135deg, #153677, #4e085f);
+        /* background-color: red; */
+        padding: 10px;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .todo {
+        width: 41%;
+        height: 30vh;
+        background-color: white;
+        border-radius: 5px;
+      }
+      .row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 30px;
+        padding-left: 20px;
+        margin: bottom 25px;
+        background: #edeef0;
+        /* border-radius: 50px; */
+      }
+
+      #input-box {
+        flex: 1;
+        outline: none;
+        border: none;
+        background: transparent;
+      }
+      ul li {
+        list-style: none;
+        padding: 10px 10px;
+        user-select: none;
+        cursor: pointer;
+        position: relative;
+        text-align: center;
+      }
+      ul li::before {
+        content: "";
+        position: absolute;
+        width: 26px;
+        height: 26px;
+        background-image: url("/project_img/noun-radio-button-unchecked-6630704.png");
+        border-radius: 50%;
+        background-position: center;
+        background-size: cover;
+        top: 12px;
+        left: 20px;
+        /* border: 2px solid red; */
+      }
+      ul li.checked {
+        color: #555;
+        text-decoration: line-through;
+      }
+      ul li.checked::before {
+        background-image: url("/project_img/Green-check-mark-on-transparent-background-PNG.png");
+      }
+
+      ul li span {
+        text-align: center;
+        line-height: 19px;
+        color: #555;
+        font-size: 30px;
+        position: absolute;
+        right: 16px;
+        padding: 5px;
+        border-radius: 20px;
+      }
+      ul li span:hover {
+        background-color: #edeef0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="todo">
+        <h2>to do list</h2>
+        <div class="row">
+          <input type="text" id="input-box" placeholder=" add your text" />
+          <button onclick="addTask()">Add</button>
+        </div>
+        <ul id="list-box">
+          <!-- <li class="checked">helos</li>
+          <li>helos</li> -->
+        </ul>
+      </div>
+    </div>
+
+    <!-- <script>
+      let inputBox = document.getElementById("input-box");
+      let listBox = document.getElementById("list-box");
+
+      function addTask() {
+        if (inputBox.value === "") {
+          alert("Enter text before this: ");
+        } else {
+          let li = document.createElement("li"); // creatint li
+          li.innerHTML = inputBox.value; // add value in li
+          listBox.appendChild(li); // append li in div
+          let span = document.createElement("span"); //creating span tag
+          span.innerHTML = "\u00d7";
+          li.appendChild(span);
+        }
+        inputBox.value = "";
+        saveData();
+      }
+
+      listBox.addEventListener("click", function (e) {
+        if (e.target.tagName === "LI") {
+          e.target.classList.toggle("checked");
+          saveData();
+        } else if (e.target.tagName === "SPAN") {
+          e.target.parentElement.remove();
+          saveData();
+        }
+      });
+
+      function saveData() {
+        localStorage.setItem("data", listBox.innerHTML);
+      }
+
+      function showData() {
+        listBox.innerHTML = localStorage.getItem("data");
+      }
+      showData();
+    </script> -->
+
+    <script>
+      let inputValue = document.getElementById("input-box");
+      let listCon = document.getElementById("list-box");
+
+      function addTask() {
+        if (inputValue === "") {
+          alert("wrong");
+        } else {
+          let li = document.createElement("li");
+          li.innerHTML = inputValue.value;
+          listCon.appendChild(li);
+          let spn = document.createElement('SPAN');
+          
+        }
+
+      }
+
+      listCon.addEventListener('click', function(e)
+    {
+      e.target
+    })
+
+
+
+
+
+    </script>
+  </body>
+</html>

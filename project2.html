@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* .name {
+        border: 2px solid #12a;
+        width: 30%;
+      }
+      h1 {
+        cursor: pointer;
+      }
+      img {
+        overflow: hidden;
+        width: 10%;
+        height: 130px;
+      } */
+      body {
+        user-select: none;
+        display: flex;
+        align-items: center;
+        height: 100vh;
+      }
+
+      #container {
+        border: 1px solid black;
+        background: linear-gradient(135deg, #153677, #4e085f);
+        padding: 10px 5px;
+        width: 25%;
+        height: auto;
+        border-radius: 5px;
+      }
+
+      span {
+        width: 25px;
+        height: 20px;
+        font-size: 35px;
+        /* border: 1px solid grey; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: grey;
+      }
+      span:hover {
+        background-color: black;
+        color: white;
+        overflow: hidden;
+      }
+      #container h2 {
+        text-transform: capitalize;
+        line-height: 20px;
+        color: white;
+      }
+      /* #con {
+        width: 70%;
+        height: 50px;
+        border: 1px solid red;
+        margin: 5px 5px;
+        background-color: black;
+      } */
+
+      p {
+        background-color: greenyellow;
+        display: inline-block;
+        cursor: pointer;
+        border-radius: 2px;
+        height: 20px;
+        letter-spacing: 1px;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        padding: 2px;
+      }
+
+      p.check
+      {
+        text-decoration: line-through;
+        color: rgb(77, 74, 74);
+      }
+      button {
+        background-color: orange;
+        border: none;
+        font-size: 16px;
+        border-radius: 5px;
+        padding: 5px;
+        margin-top: 10px;
+      }
+      button:hover {
+        background-color: black;
+        color: white;
+      }
+
+      button:active {
+        background-color: green;
+      }
+      #mydiv {
+        position: relative;
+        width: 80%;
+        /* border: 1px solid red; */
+        height: 20px;
+        margin-bottom: 10px;
+        padding-left: 5px;
+        font-size: 1em;
+        color: black;
+        margin-top: 8%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      input {
+        /* margin-bottom: px; */
+        width: 185px;
+        height: 5vh;
+        padding: 0px 10px;
+        font-size: 18px;
+        text-transform: uppercase;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div id="con">
+      <button onclick="setColor('purple')" style="background-color: green">
+        green
+      </button>
+    </div> -->
+
+    <!-- <div class="name">
+      <h1 id="one" style="border: 1px solid; display: inline">
+        helloo wervers
+      </h1>
+      <h2 id="two">singh ji</h2>
+    </div> -->
+
+    <div id="container">
+      <h2>add Notes</h2>
+      <input type="text" id="inp" />
+      <div id="con">
+        <!-- created pera tag by js -->
+      </div>
+      <button onclick="addNote()">Add Note</button>
+    </div>
+    <script>
+      //   let arr = [
+      //     { name: "singh", age: 25 },
+      //     { name: "rahul", age: 24 },
+      //     { name: "anil", age: 25 },
+      //   ];
+      //   let container = document.getElementById("con");
+
+      //   function add() {
+      //     container.innerHTML = "";
+      //     arr.forEach((ele) => {
+      //       container.innerHTML = `<div> age is ${ele.name} and age is ${ele.age}</div>`;
+      //     });
+      //   }
+      //   add();
+      //NEXT PROGRAME
+      //   let one = document.getElementById("one");
+      //   let two = document.getElementById("two");
+      //   let body = document.body;
+      //   one.addEventListener("mousemove", function (e) {
+      //     console.log(e.screenX);
+      //     if (e.screenX === 207) {
+      //       console.log("corrrect");
+      //     } else if (e.screenX === 206) {
+      //       let div = document.createElement("div");
+
+      //       let img = document.createElement("img");
+      //       img.src = "/project_img/Green-check-mark-on-transparent-background-PNG.png";
+      //       one.appendChild(img);
+      //       one.appendChild(img);
+      //     } else if (e.screenX === 205) {
+      //       console.log("corrrect");
+      //     } else if (e.screenX === 204) {
+      //       console.log("corrrect");
+      //     } else if (e.screenX === 203) {
+      //       console.log("corrrect");
+      //     }
+      //   });
+      let con = document.getElementById("con");
+      let container = document.getElementById("container");
+      let input = document.getElementById("inp"); //INPUT VALUE
+
+      function addNote() {
+        if (input.value === "") {
+          alert("Please enter value first: ");
+        } else {
+          let div = document.createElement("div");
+          let span = document.createElement("span");
+          div.setAttribute("id", "mydiv");
+
+          con.appendChild(div);
+
+          // create pera
+
+          let p = document.createElement("p");
+          div.appendChild(p);
+          span.innerHTML = "\u00d7";
+          div.appendChild(span);
+          let te = document.createTextNode(input.value);
+          p.appendChild(te);
+          saveData();
+          input.value = "";
+        }
+      }
+      // REMOVE WORK
+      con.addEventListener("click", function (e) {
+        if (e.target.tagName === "SPAN") {
+          // e.target.style.transition = 'transform 2.5s ease in out';
+          e.target.parentElement.remove();
+        } else if (e.target.tagName === 'P') {
+          e.target.classList.toggle('check');
+          
+        }
+        saveData(); //BUG FINDED
+      });
+
+      function saveData() {
+        localStorage.setItem("data", con.innerHTML); //BUG FINDED
+      }
+
+      function showData() {
+        con.innerHTML = localStorage.getItem("data");
+      }
+      showData();
+    </script>
+  </body>
+</html>

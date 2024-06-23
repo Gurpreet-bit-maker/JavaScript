@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+        }
+      h3 {
+        color: red;
+        animation: blink 1s step-start infinite;
+        text-transform: capitalize;
+        text-decoration: underline;
+      }
+      @keyframes blink {
+        50% {
+          opacity: 0;
+        }
+      }
+      #start {
+        width: 20%;
+        background-color: rgb(174, 129, 96);
+      }
+      .box {
+        width: 364px;
+        height: 43vh;
+        padding: 5px;
+        background: linear-gradient(135deg, #153677, #4e085f);
+        user-select: none;
+      }
+      #container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 5px;
+        background-color: black;
+      }
+      #quistionText {
+        text-transform: capitalize;
+        background-color: black;
+        color: yellow;
+        padding-left: 10px;
+      }
+      button {
+        width: 50%;
+        text-align: center;
+        margin: 10px 0px;
+        text-transform: capitalize;
+        letter-spacing: 1px;
+        height: 42px;
+        border: none;
+        border-radius: 2px;
+      }
+      button:hover {
+        background-color: orange;
+        font-weight: bold;
+      }
+
+      #one:active {
+        background-color: green;
+      }
+      /* next Button work */
+      #next {
+        width: 44px;
+        height: 20px;
+      }
+      #pe {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: yellow;
+        font-size: 2.2em;
+        animation: b 1.5s step-start 4;
+        border: 1px solid red;
+        height: 214px;
+        background-color: black;
+      }
+      @keyframes b {
+        50% {
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="start-section">
+      <h3>quis game: press <span style="color: black">start</span> button</h3>
+      <button id="start">Start</button>
+    </div>
+    <div class="box" style="display: none">
+      <h1 id="quistionText"></h1>
+      <div id="container">
+        <button id="one">hello</button>
+        <button id="two">jayo</button>
+      </div>
+      <div id="scr"></div>
+      <button id="next" style="display: none">next</button>
+    </div>
+    <script>
+      let blinkText =
+        document.getElementById("start-section").firstElementChild;
+      let start = true;
+      let startButton = document.getElementById("start");
+      let box = document.querySelector(".box");
+      let cont = document.getElementById("container");
+      let quistionText = document.getElementById("quistionText");
+      let buttonOne = document.getElementById("one");
+      let buttonTwo = document.getElementById("two");
+      let nextButton = document.getElementById("next");
+      let scoreVarible = document.getElementById("scr");
+
+      //score object
+      let score = {
+        s: 0,
+      };
+
+      //start button
+
+      startButton.addEventListener("click", function (e) {
+        if (e.target) {
+          box.style.display = "block";
+          blinkText.remove();
+          startButton.style.display = "none";
+        } else {
+          box.style.display = "none";
+        }
+      });
+
+      let a = [
+        {
+          quistion: "First male who reched on the moon surface ?", //first quistion
+          answer: [
+            {
+              text: "Nail armstring",
+              check: true,
+            },
+            {
+              text: "shanukuran",
+              check: false,
+            },
+          ],
+        },
+        {
+          quistion: "hey your name : is gurpreet: ", //second quistion
+          answer: [
+            {
+              text: "gurpreet",
+              check: true,
+            },
+            {
+              text: "anil",
+              check: false,
+            },
+          ],
+        },
+      ];
+      let count = 0;
+      let str = "";
+      quistionText.innerText = a[0].quistion;
+      // i goted buttons true and false;
+      let c = a[0].answer[0].check;
+      let e = a[0].answer[1].check;
+      console.log(c);
+      console.log(e);
+
+      buttonOne.innerText = a[0].answer[0].text;
+      buttonTwo.innerText = a[0].answer[1].text;
+
+      //Buttons eventlisners
+      buttonOne.addEventListener("click", function (t) {
+        buttonOne.style.color = "white";
+        if (c === true) {
+          buttonOne.style.backgroundColor = "green";
+          score.s += 1;
+          console.log(score.s);
+          buttonOne.disabled = true;
+          buttonTwo.disabled = true;
+        } else {
+          buttonOne.style.backgroundColor = "green";
+          buttonOne.disabled = true;
+          buttonTwo.disabled = true;
+          console.log(score.s);
+        }
+        nButton(t);
+      });
+
+      buttonTwo.addEventListener("click", function (t) {
+        buttonOne.style.color = "white";
+        if (e === true) {
+          buttonOne.style.backgroundColor = "green";
+          score.s += 1;
+          console.log(score.s);
+          buttonOne.disabled = true;
+          buttonTwo.disabled = true;
+        } else {
+          buttonOne.style.backgroundColor = "green";
+          buttonOne.disabled = true;
+          buttonTwo.disabled = true;
+          console.log(score.s);
+        }
+        nButton(t);
+      });
+      // next button function
+      //   function check(t) {
+      //     let nextButton = document.createElement("button");
+      //     //   }
+      function nButton(click) {
+        if (click === true) {
+          nextButton.style.display = "block";
+        } else {
+          nextButton.style.display = "block";
+        }
+      }
+      // score show
+      let scr = "";
+      // next btn
+      nextButton.addEventListener("click", function () {
+        quistionText.innerHTML = a[1].quistion;
+        buttonOne.innerHTML = a[1].answer[0].text;
+        buttonTwo.innerHTML = a[1].answer[1].text;
+        buttonOne.style.backgroundColor = "white";
+        buttonOne.style.color = "black";
+        buttonOne.disabled = false;
+        buttonTwo.disabled = false;
+
+        count += 1;
+
+        if (count === 2) {
+          cont.style.display = "none";
+          quistionText.style.display = "none";
+          scr = `<p id='pe'> your score is ${score.s}</p>`;
+          scoreVarible.innerHTML = scr;
+          nextButton.style.display = 'none';
+        }
+      });
+
+      // quistion two
+
+      //extra work
+     
+    </script>
+  </body>
+</html>

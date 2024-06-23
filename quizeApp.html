@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .app {
+        border: 1px solid;
+        width: 20%;
+        height: 43vh;
+      }
+
+      #con {
+      }
+
+      #buttons {
+        display: flex;
+        flex-direction: column;
+      }
+      button {
+        text-align: start;
+        margin: 5px;
+      }
+      #next {
+        display: block;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app">
+      <h1>simple quiz</h1>
+      <div id="con">
+        <h2>quistion goes here</h2>
+        <div id="buttons">
+          <button class="btn"></button>
+          <button class="btn">answer</button>
+          <button class="btn">answer</button>
+        </div>
+        <button id="next">next</button>
+      </div>
+    </div>
+
+    <script>
+let buttons = document.querySelector('.btn');
+
+
+        let quistions = [
+            {
+                quist: "which one is best think",
+                
+            }
+        ];
+function addText()
+{
+    buttons.innerText = `${quistions.quist}`
+}
+addText();
+
+    </script>
+  </body>
+</html>

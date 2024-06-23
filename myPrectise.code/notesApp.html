@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #cont {
+        border: 1px solid;
+        max-width: 300px; /* not fix width*/
+        background: linear-gradient(135deg, #153677, #4e085f);
+        color: white;
+        padding: 10px;
+      }
+      #textDiv {
+        height: 20vh;
+        padding: 10px;
+        border: 1px solid red;
+        width: 120px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+        position: relative;
+      }
+      textarea {
+        height: 20vh;
+      }
+
+      #dltButton {
+        margin-left: 5px;
+        background-color: rgb(153, 146, 146);
+        color: black;
+        font-weight: bold;
+        height: 34px;
+        font-size: 33px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="cont">
+      <h2>create notes</h2>
+      <button id="btn">Add notes</button>
+    </div>
+    <div id="container"></div>
+
+    <script>
+      let container = document.getElementById("container");
+      let div = document.getElementById("cont");
+      let btn = document.getElementById("btn");
+      let deleteButton;
+      let div2 = "";
+      let index = 0;
+
+      console.log(btn);
+      btn.addEventListener("click", function () {
+        let id = `myDiv${index}`;
+        div2 += `<div id=${id}><textarea></textarea></div>`;
+        
+        container.innerHTML = div2;
+        index++;
+        // let div2 = document.createElement("div");
+        // let textArea = document.createElement("textarea");
+        // div2.appendChild(textArea);
+        // div2.setAttribute("id", "textDiv");
+
+        // delet button
+        deleteButton = document.createElement("span");
+        deleteButton.setAttribute("id", `dltButton${index}`);
+        deleteButton.innerHTML = "\u00d7";
+        document.getElementById(id).append(deleteButton);
+        // preappend
+        // let d = document.createElement('input');
+        // body.prepend(d);
+      });
+
+      //   function cencel() {
+      //     div2.remove();
+      //   }
+    </script>
+  </body>
+</html>

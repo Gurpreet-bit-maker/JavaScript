@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+        function getdeposite() {
+          let v = true;
+        while (v) {
+          let depositeAmount = prompt("enter amount :");
+          let depositeAmountPars = parseFloat(depositeAmount);
+          if (isNaN(depositeAmountPars) || depositeAmountPars <= 0) {
+            console.log("invalid , try again :");
+          } else {
+            console.log("good");
+            v = false;
+          }
+        }
+      }
+
+      getdeposite();
+    </script>
+  </body>
+</html>

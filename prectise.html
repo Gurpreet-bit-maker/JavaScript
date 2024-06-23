@@ -1,0 +1,174 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .rect {
+        width: 20%;
+        height: 80px;
+        border: 1px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* buttons works */
+
+      .box {
+        border: 3px solid yellow;
+        height: 5vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: absolute;
+        bottom: 1px;
+        width: 95%;
+      }
+      button {
+        width: 12%;
+        margin: 3px;
+      }
+      .container {
+        height: 60vh;
+        border: 1px solid green;
+        background-color: tomato;
+      }
+      img {
+        width: 100%;
+      }
+
+      .img-section {
+        display: flex;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="img-section">
+        <img src="/project_img/Screenshot 2024-02-05 132214.png" alt="" />
+        <img src="/project_img/Screenshot 2024-03-15 002456.png" alt="" />
+      </div>
+      <div class="box">
+        <button id="pre">Preveiws</button>
+        <button id="for">Forwerd</button>
+      </div>
+    </div>
+
+    <!-- <div class="rect">
+<div id="c">d</div>
+</div> -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="container">
+
+    </div>
+    <script>
+      // function dobble() {
+      //   let arr = [2, 3, 4, 5];
+      //   let dob;
+      //   for (let i = 0; i < arr.length; i++) {
+      //     dob = arr[i] * 2;
+      //     console.log(dob);
+      //   }
+      //   // return dob;
+      // }
+
+      // let display = dobble();
+      // console.log(display);
+
+      // function array(name) {
+      //   let arr = [];
+      //   arr.push(name);
+      //   let data = arr;
+      //   console.log(data);
+      //   space();
+      // }
+
+      // function space() {
+      //   console.log("try to check ... ");
+      // };
+      // array("hello");
+      //CHECK;
+      // function add(n, c) {
+      //   let obj = {
+      //     name: n,
+      //     class: c,
+      //   };
+
+      //   return obj;
+      // }
+      // let b = add("rajkumar", 15);
+      // console.log(b.name, b.class);
+      // this code is fine but here i learnt one more think if i want to use array and object outside from function than we need return keyword.
+      // CHECK:
+
+      // let htm = document.createElement('div');
+      // let obj =
+      // {
+      //   name: 'singh',
+      //   sellery: 25000,
+      // };
+
+      // htm.userData = obj;
+      // console.log(htm.userData.name);
+      // console.log(htm.userData.sellery);
+
+      // function add(numbers) {
+      //   let t = 0;
+      //   for (const key of numbers) {
+      //     t += key;
+      //   }
+      //   return t;
+      // }
+
+      // let arr = [2, 6, 4, 7, 4];
+      // let result = add(arr);
+      // console.log(arr + " sum is " + result);
+      //CHECK:              
+      // let a = 25;
+      // let b = 24;
+      // function sum(x, y) {
+      //   return x + y;
+      // }
+
+      // let s = sum(a, b);
+      // console.log(s);
+      //CHECK:
+
+      // function add(...value) {
+      //   let arr = [value];
+      //   // console.log(arr);
+      //   arr.forEach((element) => {
+      //     console.log(element);
+      //   });
+      // }
+      // add("singh", 25, "pret");
+      let notes = [
+        { id: 1, name: "abhi", title: "hello" },
+        { id: 2, name: "aman", title: "hello1" },
+        { id: 3, name: "rohan", title: "hello2" },
+        { id: 4, name: "ansh", title: "hello2" },
+      ];
+      const hello = ()=>{
+      notes.map((note)=>{
+        document.getElementById('container').innerHtml = `<div style="background-color: black;color: white">
+          ${note.id}
+          ${note.name}
+          ${note.title}
+          </div> `
+      })
+    }
+    hello();
+    </script>
+  </body>
+</html>

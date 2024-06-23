@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0%;
+        padding: 0%;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        width: 100vw;
+        height: 100vh;
+      }
+      .container {
+        border: 1px solid black;
+        width: 40vw;
+        height: auto;
+        margin: auto auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      #options > button {
+        width: 100px;
+        height: 30px;
+        display: flex;
+        flex-direction: column;
+        font-size: 16px;
+        border: 2px solid black;
+        margin: 5px;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #prev,
+      #next {
+        width: 100px;
+      }
+
+      .true {
+        background-color: green;
+      }
+
+      .false {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container"><!--div one-->
+      <h2 id="question"></h2>
+      <div id="options"></div><!--insert element-->
+      <div> <!-- div second -->
+        <button id="prev">prev</button>
+        <button id="next">next</button>
+      </div>
+      <p id="demo"></p>
+    </div>
+    <script src="./tyrArrayOfObject.js"></script>
+    <!-- <script>
+        let cont = document.getElementById("cont");
+        let h2 = document.getElementsByTagName("h2")[0];
+        let peraOne = document.getElementById("one");
+        let peraTwo = document.getElementById("two");
+        let p = document.getElementById("demo");
+
+        let employees = [
+          {
+            first: " is you gupreet?",
+            details: [
+              { name: "singh", correct: false },
+              { name: "gurpreet", correct: true },
+              { name: "kumar", correct: false },
+            ],
+          },
+          { second: "hello sir i am anil", details: [{ name: "kumar" }] },
+        ];
+
+        function inputValue() {
+          h2.innerHTML = employees[0].first;
+          peraOne.innerHTML = employees[0].details[0].name;
+          peraTwo.innerHTML = employees[0].details[1].name;
+        }
+        inputValue();
+
+        cont.firstElementChild.addEventListener("click", function (e) {
+          if (e.target === true) {
+            p.innerHTML = "wrong";
+          }else
+          {
+            p.innerHTML = "right";
+          }
+        });
+
+let btnOne = document.getElementById('')
+
+      
+
+      let h1 = document.getElementsByTagName("h2")[0];
+      h1.innerText = array[0].quition;
+
+
+
+  </script> -->
+  </body>
+</html>
