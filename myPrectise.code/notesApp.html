@@ -35,6 +35,36 @@
         height: 34px;
         font-size: 33px;
       }
+      .myDiv {
+        border: 1px solid red;
+        width: 208px;
+        margin-top: 5px;
+      }
+      .mycontainer {
+        border: 1px solid;
+        width: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #myspan {
+        border: 1px solid;
+        background-color: yellow;
+        cursor: pointer;
+      }
+      .div{
+        border: 1px solid;
+        width: 226px;
+        display: flex;
+        align-items: center;
+      }
+      .img-c
+      {
+        width: 30px;
+        height: 30px;
+        border: 1px solid;
+        margin-left: 5px;
+      }
     </style>
   </head>
   <body>
@@ -43,40 +73,8 @@
       <button id="btn">Add notes</button>
     </div>
     <div id="container"></div>
+   
 
-    <script>
-      let container = document.getElementById("container");
-      let div = document.getElementById("cont");
-      let btn = document.getElementById("btn");
-      let deleteButton;
-      let div2 = "";
-      let index = 0;
-
-      console.log(btn);
-      btn.addEventListener("click", function () {
-        let id = `myDiv${index}`;
-        div2 += `<div id=${id}><textarea></textarea></div>`;
-        
-        container.innerHTML = div2;
-        index++;
-        // let div2 = document.createElement("div");
-        // let textArea = document.createElement("textarea");
-        // div2.appendChild(textArea);
-        // div2.setAttribute("id", "textDiv");
-
-        // delet button
-        deleteButton = document.createElement("span");
-        deleteButton.setAttribute("id", `dltButton${index}`);
-        deleteButton.innerHTML = "\u00d7";
-        document.getElementById(id).append(deleteButton);
-        // preappend
-        // let d = document.createElement('input');
-        // body.prepend(d);
-      });
-
-      //   function cencel() {
-      //     div2.remove();
-      //   }
-    </script>
+    <script src="notesApp.js"></script>
   </body>
 </html>

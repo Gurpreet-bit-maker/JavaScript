@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: beige;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .container {
+        background-color: blue;
+        padding: 5px;
+      }
+      .digit {
+        font-size: 70px;
+        font-weight: bold;
+        color: white;
+      }
+      .txt {
+        font-size: 40px;
+        font-weight: bold;
+        color: white;
+      }
+      #btn-container {
+        text-align: center;
+        margin-top: 5px;
+      }
+      .btn {
+        padding: 7px 25px;
+        font-size: 15px;
+        margin: 0px 10px;
+        color: white;
+        cursor: pointer;
+        border: 0px;
+      }
+      #Start {
+        background-color: brown;
+      }
+      #Stop {
+        background-color: rgb(152, 128, 128);
+      }
+      #Reset {
+        background-color: rgb(125, 194, 82);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div id="time">
+        <span class="digit" id="hr">00</span>
+        <span class="txt">Hr</span>
+        <span class="digit" id="min">00</span>
+        <span class="txt">Min</span>
+        <span class="digit" id="sec">00</span>
+        <span class="txt">Sec</span>
+        <span class="digit" id="count">00</span>
+        <span class="txt">Hr</span>
+      </div>
+      <div id="btn-container">
+        <button class="btn" id="Start" onclick="s()">Start</button>
+        <button class="btn" id="Stop" onclick="t()">Stop</button>
+        <button class="btn" id="Reset" onclick="r()">Reset</button>
+      </div>
+    </div>
+    <script>
+      let hr = 0;
+      let min = 0;
+      let sec = 0;
+      let count = 0;
+
+      let timer = false; //Note
+      function s() {
+        timer = true;
+        stopWatch();
+      }
+      function t() {
+        timer = false;
+      }
+      function r() {}
+
+      // Stopwatch work
+      function stopWatch() {
+        if (timer == true) {
+          count++;
+          if (count == 100) {
+            sec =sec + 1;
+            count = 0;
+          }
+          document.getElementById('sec').innerHTML = sec;
+          document.getElementById("count").innerHTML = count; //Note
+          setTimeout("stopWatch()", 10);
+        }
+      }
+    </script>
+  </body>
+</html>
