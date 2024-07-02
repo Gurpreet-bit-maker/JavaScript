@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>
+      Sometimes we need to create many objects of the same type. <br />
+
+      To create an object type we use an
+      <b style="color: red"> object constructor function. </b>
+    </h1>
+    <script>
+      function Person(name, age, speed) {
+        this.name = name;
+        this.age = age;
+        this.speed = speed;
+        this.run = function () {
+          console.log("the car is running : ");
+        };
+        this.Dspeed = function () {
+          console.log(`the car speed is ${200 - this.speed}  : `);
+        };
+      }
+
+      person1 = new Person("fs", 25, 30);
+      person1.run();
+      person1.Dspeed();
+
+      Person2 = new Person("singh", 230, 251);
+      let father = Person2;
+
+      Person.prototype.nationility = "hindi";
+      console.log(person1.nationility);
+    </script>
+  </body>
+</html>

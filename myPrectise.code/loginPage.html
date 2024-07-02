@@ -1,11 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
- 
-</body>
+    <style>
+      .outer {
+        width: 22%;
+        border: 1px solid;
+        height: auto; /*note*/
+        background-color: rgb(57, 54, 54);
+        padding: 10px;
+        margin: 10px;
+        user-select: none; /*note*/
+      }
+      h2 {
+        text-align: center;
+        color: greenyellow;
+        text-transform: uppercase;
+        font-weight: 2000; /*note*/
+      }
+      .input-section {
+        display: flex;
+        flex-direction: column;
+      }
+
+      input {
+        margin-top: 15px;
+        width: 17vw;
+        margin-left: 15px;
+        height: 28px;
+        background-color: gray;
+        border: none;
+      }
+      .forgate {
+        display: flex;
+        justify-content: space-between;
+        height: 33px;
+        align-items: center;
+      }
+      h5 {
+        display: inline-block;
+        padding: 0px 5px;
+        color: greenyellow;
+        text-transform: capitalize;
+        letter-spacing: 0px; /*note*/
+        font-size: 11px; /*note*/
+        text-decoration: underline;
+      }
+      input::placeholder {
+        letter-spacing: 0px;
+        font-size: 12px;
+        color: rgb(224, 218, 218);
+        padding-left: 5px;
+      }
+
+      button {
+        display: block; /*note*/
+        margin: 5px auto; /*note*/
+        width: 85%;
+        background-color: greenyellow;
+        height: 5vh;
+        font-weight: bold;
+        letter-spacing: 1px;
+        border: none; /*note*/
+      }
+      button:hover {
+        background-color: black;
+        color: white;
+      }
+      button:active {
+        background-color: red;
+      }
+      /* extra css */
+
+      /* heading tag,, peragraph+lorem,, div(work),, button,, input+placeholder,, class+id */
+    </style>
+  </head>
+  <body>
+    <div class="outer">
+      <h2>login in</h2>
+      <div class="input-section">
+        <input type="text" placeholder="Username" id="inputValue" />
+        <input type="text" placeholder="Password" id="passWordValue" />
+      </div>
+      <div class="forgate">
+        <h5>forgate password</h5>
+        <h5>sign</h5>
+      </div>
+      <p id="demo" style="color: white"></p>
+      <button id="btn">Login</button>
+    </div>
+
+    <script>
+      //varibles
+      let btn = document.getElementById("btn");
+      let peragraph = document.getElementById("demo");
+      let outerDiv = document.querySelector(".outer"); //outerDiv
+      //event
+      let inputValue = document.getElementById("inputValue");
+      let password = document.getElementById("passWordValue");
+
+      //out
+      btn.addEventListener("click", function () {
+        //in
+
+        if (inputValue.value === "" && password.value === "") {
+          peragraph.innerText = "Please Enter value";
+          peragraph.style.color = "red";
+        } else {
+          peragraph.innerText = "correct";
+          peragraph.style.color = "white";
+
+          outerDiv.style.display = "none";
+
+          let h1 = document.createElement("h1");
+          let pera = document.createTextNode("Succesfully");
+
+          document.body.appendChild(h1);
+          h1.appendChild(pera);
+          h1.style.backgroundColor = "green";
+          h1.style.color = "blue";
+        }
+      });
+    </script>
+  </body>
 </html>
